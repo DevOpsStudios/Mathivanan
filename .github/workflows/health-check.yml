@@ -1,3 +1,4 @@
+name: healthcheck Workflow
 on:
   schedule:
     - cron: '*/1 * * * *'  # Every 5 minutes
