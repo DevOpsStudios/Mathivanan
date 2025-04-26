@@ -16,11 +16,12 @@ jobs:
           echo "🔍 Checking https://littleslawacademy.github.io/learning.html"
           STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" https://littleslawacademy.github.io/learning.html)
             if [ "$STATUS_CODE" -ne 200 ]; then
+
             echo "❌ Site is down or unreachable (HTTP $STATUS_CODE)"
             echo "status=fail" >> $GITHUB_OUTPUT
             exit 1
           else
-            echo "✅ Site is up (HTTP 200)"
+            echo "✅ Site is up (HTTP 200)" 
             echo "status=ok" >> $GITHUB_OUTPUT
           fi
       - name: Send email if site is down
